@@ -1,0 +1,340 @@
+  <div class="row">
+  <div class="col-md-8 offset-md-2">
+
+    <div id="form-container">
+    
+        <div class="page-header text-center">
+            <h1 style="color: white">Fill the Details</h1>
+            
+            <!-- the links to our nested states using relative paths -->
+            <!-- add the active class if the state matches our ui-sref -->
+            
+            <div id="status-buttons" class="text-center">
+                <a ><span id="game_id" class="current">1</span> Game</a>
+                <a><span id="brand_id"  >2</span> Brand</a>
+                <a><span id="video_id" >3</span> Video</a>      
+            </div>
+
+
+            
+        </div>
+        
+        <!-- use ng-submit to catch the form submission and use our Angular function -->
+        <form   id="signup-form" novalidate >
+            <!-- our nested state views will be injected here -->
+        <div id="form-views" ui-view></div>
+
+
+    <div id="game">
+
+
+                  <div class="row col-md-12 ">
+
+    <div class="form-group col-md-10 offset-md-1 ">
+      <label for="Sports">Sports</label>   
+      
+    <select class="form-control"  name="sports" (change)="OnChangeSports()"    [(ngModel)]="selectedSports">
+                  
+                  <option *ngFor="let item of dropDownSports" value="{{item.sports}}">
+                      {{item.sports | uppercase }}
+                  </option>
+    </select>
+
+
+    </div>
+
+    <div class=" form-group col-md-10 offset-md-1 ">
+      <label for="Tournament">Tournament</label>
+        <select class="form-control"  (change)="OnChangeTournament()" name="Tournament"  [(ngModel)]="selectedTournaments">
+                  
+                  <option *ngFor="let item of dropDownTournaments" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+    </div>
+
+    <div class="form-group col-md-10 offset-md-1 ">
+      <label for="Round">Round </label>
+      <select class="form-control"  name="Round"  [(ngModel)]="selectedRound">
+                  
+                  <option *ngFor="let item of dropDownRounds" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+    </div>
+
+  <div id ="match" class=" form-group col-md-10 offset-md-1">
+      <label for="Match">Match </label>
+      <select class="form-control"  name="match" (change)="OnChangeMatches()"  [(ngModel)]="selectedMatches">
+                  
+                  <option *ngFor="let item of dropDownMatches" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+  </div>
+
+    <div id ="team" class=" form-group col-md-10 offset-md-1">
+      
+    <div class="row ">
+      <div class="col-md-5 ">
+          <label for="teamA">Team A </label>
+      <select class="form-control"  name="teamA"  [(ngModel)]="selectedTeamsA">
+                  
+                  <option *ngFor="let item of dropDownTeams" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+    </div>
+
+    <div class="col-md-5 offset-md-2">
+      <label for="teamB">Team B </label>
+      <select class="form-control"  name="teamB"  [(ngModel)]="selectedTeamsB">
+                  
+                  <option *ngFor="let item of dropDownTeams" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+      </div>
+      </div>
+      </div>
+
+    <div id ="players" class="form-group col-md-10 offset-md-1">
+      
+    <div class="row ">
+      <div class="col-md-5 ">
+          <label for="teamA">Players A </label>
+      <select class="form-control"  name="playersA"  [(ngModel)]="selectedPlayersA">
+                  
+                  <option *ngFor="let item of dropDownPlayers" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+    </div>
+
+    <div class="col-md-5 offset-md-2">
+      <label for="teamB">Players B </label>
+      <select class="form-control"  name="playersB"  [(ngModel)]="selectedPlayersB">
+                  
+                  <option *ngFor="let item of dropDownPlayers" value="{{item}}"  >
+                      {{item | uppercase }}
+                    
+                  </option>
+    </select>
+      </div>
+      </div>
+      </div>
+
+
+
+    <div class="form-group col-md-10 offset-md-1">
+      <button  (click)="getAllProjects()" class="btn btn-primary pull-left " ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>Show All Projects </button>
+      <button (click)="brandclicked()" class="btn btn-primary dropbtn pull-right "> Next Section <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </button>
+    </div>
+
+  </div>
+      
+    </div>
+
+
+
+
+  <div id="brand" >
+
+
+  <form [formGroup]="myForm" id="myform" novalidate >
+        <div formArrayName="addresses">
+            <div *ngFor="let address of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
+              <div class="panel-heading">
+                <span class=" fa fa-close pull-right title_color add_remove" *ngIf="myForm.controls.addresses.controls.length > 1" (click)="removeAddress(i)"></span>
+              </div>
+              <div class="panel-body" [formGroupName]="i">
+                <address [group]="myForm.controls.addresses.controls[i]"></address>
+              </div>
+            </div>
+        </div>
+  </form>
+
+
+
+
+  <div class="clearfix  "></div>
+  <div class="clearfix hline"></div>
+   <span class="fa fa-plus pull-left title_color top_padding_10 add_remove" (click)="addAddress()" > Add another Brand  </span> 
+  <div class="container ">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <form>
+                                  <div class="form-group">
+                                        <label for="single">Import CSV <a href="pages/newproject/newproject/sample_csv.csv"> [ Download Sample ]</a>  </label>
+                                      <input type="file" (change)="changeListener($event)"  accept=".csv" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
+                                  </div> 
+                                  <div class="form-group">
+                                      <label  for="multiple"> Upload Zip Files </label>
+                                      <input type="file" (change)="uploadChanges($event)" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  />
+                                  </div>
+                                             
+                              </form>
+                          </div>
+                          <div class="col-md-8">
+                            
+                              <p class="title_color" >Queue length: {{ uploader?.queue?.length }}</p>
+
+                              <table class="table">
+                                  <thead>
+                                  <tr>
+                                      <th class="title_color" width="50%">Name</th>
+                                      <th class="title_color">Size</th>
+                                      <th class="title_color" >Progress</th>
+                                      <th class="title_color" >Status</th>
+                                      <th class="title_color">Actions</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <tr *ngFor="let item of uploader.queue">
+                                      <td class="title_color" ><strong>{{ item.file.name }}</strong></td>
+                                      <td class="title_color" nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
+                                      <td class="title_color">
+                                          <div class="progress" style="margin-bottom: 0;">
+                                              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                                          </div>
+                                      </td>
+                                      <td class="text-center title_color">
+                                          <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                          <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                          <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                      </td>
+                                      <td class="title_color" nowrap>
+                                         
+                                          <button type="button" class="btn btn-warning btn-xs"
+                                                  (click)="item.cancel()" [disabled]="!item.isUploading">
+                                              <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                          </button>
+                                          <button type="button" class="btn btn-danger btn-xs"
+                                                  (click)="item.remove()">
+                                              <span class="glyphicon glyphicon-trash"></span> Remove
+                                          </button>
+                                      </td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+
+                              <div>
+                                  <div>
+                                      <p class="title_color" >Queue progress:</p>
+                                      <div class="progress" style="">
+                                          <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                                      </div>
+                                  </div>
+                                  <button type="button" class="btn btn-success btn-s" id="uploadAll"
+                                          (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                                      <span class="glyphicon glyphicon-upload"></span> Upload all
+                                  </button>
+                                  <button type="button" class="btn btn-warning btn-s"
+                                          (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                                      <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                                  </button>
+                                  <button type="button" class="btn btn-danger btn-s"
+                                          (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                                      <span class="glyphicon glyphicon-trash"></span> Remove all
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+  <div >
+            <button  (click)="gameclicked()" class="btn btn-primary pull-left " ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous Section </button>
+            <button  (click)="videoclicked(myForm.value)" class="btn btn-primary pull-right " > Next Section <i class="fa fa-arrow-circle-right" aria-hidden="true"> </i> </button>
+
+
+
+
+</div>
+
+
+  </div>
+
+
+
+
+
+
+
+  <div id="video">       
+    <div class="container">
+    <div [hidden]="submitted">
+
+      
+  <div class="row col-md-12">                                                                                     
+    <div class="form-group input-demo radio-demo row">
+
+         
+
+<ul>
+  <li *ngFor="let option of options">
+     <input type="radio" name="price" (click)="getValue(option.id)"
+       [checked]="option.id == selectedOption.id"
+        value= {{option.id}}>
+        <label class="radio-inline custom-radio nowrap"> {{option.name}}</label>
+  </li>
+</ul>
+    </div>
+
+
+
+  <div class="form-group col-md-6 offset-md-2">
+        <label for="inputHost1">Host</label>
+        <input type="text" class="form-control"   required   [(ngModel)]="inputHost" name="host"  #host="ngModel"  >
+        <div [hidden]="host.valid || host.untouched" class="alert alert-danger"> Required </div>
+  </div>
+
+  <div class="form-group col-md-2 ">
+        <label for="inputPort1">Port</label>
+        <input type="text" class="form-control" required  [(ngModel)]="inputPort" name="port" #port="ngModel">
+        <div [hidden]="port.valid || port.untouched" class="alert alert-danger"> Required </div>
+  </div>
+
+
+
+    <div class="form-group col-md-8 offset-md-2">
+      <label for="InputEmail">User ID</label>
+      <input type="email" class="form-control"  required [(ngModel)]="InputEmail" name="email" #user="ngModel">
+          <div [hidden]="user.valid || user.untouched" class="alert alert-danger"> Required </div>
+    </div>
+
+    <div class="form-group col-md-8 offset-md-2">
+      <label for="InputPassword">Password</label>
+      <input type="password" class="form-control" required [(ngModel)]="InputPassword" name="InputPassword11" #password="ngModel">
+          <div [hidden]="password.valid || password.untouched" class="alert alert-danger"> Required </div>
+    </div>
+
+    <div class="form-group col-md-8 offset-md-2">
+      <label for="Message">Message</label>
+      <textarea  placeholder="Default Input" name="msg" class="form-control" [(ngModel)]="message"></textarea>
+    </div>
+    
+    <div class="form-group col-md-8 offset-md-2">
+    <button (click)="brandclicked()" class="btn btn-primary pull-left  " > <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous Section </button>
+    <button type="submit" (click)="submit()" class="btn btn-danger pull-right ">Submit</button>
+    </div>
+    </div>
+
+  </div>
+  </div>   
+    </div>
+
+      </form>
+
+    </div>
+
+    
+    
+    </div>
+  </div>

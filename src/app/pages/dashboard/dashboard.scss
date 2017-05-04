@@ -1,0 +1,94 @@
+@media screen and (min-width: 1620px) {
+  .row.shift-up {
+    > * {
+      margin-top: -573px;
+    }
+  }
+}
+
+@media screen and (max-width: 1620px) {
+  .card.feed-panel.large-card {
+    height: 824px;
+    background-color: black;
+
+  }
+}
+
+.user-stats-card {
+  .card-title {
+    padding: 0 0 15px;
+    
+  }
+}
+
+.blurCalendar {
+  height: 475px;
+}
+
+.idhide{
+ visibility: hidden;
+}
+
+
+
+.nextbutton {
+   width: 230px;
+   height: 35px;
+position: absolute;
+left:    50px;
+bottom:   50px;
+background-color: #00acac
+}
+
+.nextbutton:hover {
+position: absolute;
+width: 230px;
+left:    50px;
+bottom:   50px;
+background-color: #009a9a
+}
+
+
+
+
+.nextbutton1{
+ 
+position: absolute;
+left:    350px;
+bottom:   50px;
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 9px 24px;
+  font-family: "Noto sans";
+  font-size: 16px;
+  border: 1px solid #4d5f72;
+  cursor: pointer;
+  display: block;
+  width: 230px;
+  border-radius: 6px;
+}
+.dropbtn:hover {
+ background-color:  white;
+  color: black;
+  padding: 9px 24px;
+    font-family: "Noto sans";
+  font-size: 16px;
+  border: 1px solid #4d5f72
+;
+  width: 230px;
+  cursor:pointer;
+  display: block;
+  border-radius: 6px;
+  box-shadow:black;
+ 
+}
+
+
+.radiotext{
+  font-family: "Noto sans";
+  font-size: 16px;
+}
+.top-buffer { margin-top:20px; }

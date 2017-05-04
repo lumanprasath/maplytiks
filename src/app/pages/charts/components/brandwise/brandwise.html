@@ -1,0 +1,241 @@
+
+
+<section class="chartist">
+  <!--<div class="row col-md-12">
+    <div class="col-md-6">
+<h1 >Hello Madam</h1> 
+</div> 
+ <div class="col-md-12">
+<img  class="fa-example-img" style="float: right" src="./assets/img/{{logoName}}.jpg" width="94" height="56"
+      onError="this.src='./assets/img/coke.jpg';"  alt="..." />
+      </div>
+      </div>-->
+     
+ <div class="row">
+  <div class="col-md-12 col-lg-12 ">
+ <div class="row">
+      <div class="col-md-3 col-lg-3 col-xs-12">  
+          <ba-card  baCardClass="xsmall-card0">
+              <div class="parent" style="text-align: left;">
+             <span class="fa-example-icon" style="margin-right: 20px;">  <i class="fa fa-clone" aria-hidden="true"></i></span>
+             <div class="lubna">
+             <span class="text" style="margin-left: 20px;" id="dynamic-number"> </span><br>
+                  <span class="mytext" style="margin-left: 20px;"> Total Brand Frames</span>
+                  </div>  
+            </div>        
+          </ba-card>
+          </div>
+
+
+
+        <div class="col-md-3 col-lg-3 col-xs-12">  
+          <ba-card  baCardClass="xsmall-card3">
+                   <div class="parent" style="text-align: left;">
+                 <span class="fa-example-icon" style="margin-right: 20px;"> <i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                   <div class="lubna" >
+              <span class="text" style="margin-left: 20px;">{{brand_exposure}} </span>  <br> 
+                  <span class="mytext" style="margin-left: 20px;">Total Brand Duration  </span>   
+                     </div>
+                </div>
+          </ba-card>
+          </div>
+         
+
+
+           <div class="col-md-2 col-lg-2"> 
+               <ba-card   baCardClass="xsmall-card2">
+                   <div class="parent" style="text-align: left;">
+                  <!--<span class="fa-example-icon" style="margin-right: 20px;">  <i class="fa fa-picture-o" aria-hidden="true"></i></span>-->
+                   
+                  <div class="lubna" >
+                  <span class="text" style="margin-left: 20px;" >{{area1}}%</span><br>
+                    <span class="mytext" style="margin-left: 20px;">Average Area </span>
+                    </div>
+                </div>      
+              </ba-card>
+          </div>
+
+          <div class="col-md-2 col-lg-2"> 
+            <ba-card  baCardClass="xsmall-card1">
+                  <div class="parent" style="text-align: left;">
+                  <td class="fa-example-icon"> </td>
+                         <div class="lubna" >
+                   <span class="text" style="margin-left: 20px;" >23/66</span><br>
+                    <span class="mytext" style="margin-left: 20px;">Overall Rank </span>
+                  </div>               
+                </div>    
+          </ba-card>
+          </div>
+
+               <div class="col-md-2 col-lg-2"> 
+                   <ba-card  baCardClass="xsmall-card5">
+               <td class="fa-example-icon parent">  <img  class="fa-example-img"  src="./assets/img/{{logoName}}.png" width="115" height="90"
+      onError="this.src='./assets/img/logo-dark.png';"  alt="..." /></td>
+      </ba-card>
+      </div>
+
+  </div>
+</div>
+</div>
+
+
+
+<!--<div class="row">
+  <div class="col-md-6 col-xs-12">
+    <ba-card  title="Asset type" baCardClass="bxmedium-card">
+    <canvas class="space-asset"  baseChart 
+            [datasets]="topAssetWiseData"
+            [labels]="topAssetWiseLabels"
+            [colors]="topAssetWiseColor"
+            [options]="topAssetWiseOptions"
+            [legend]="topAssetWiseLegend"
+            [chartType]="topAssetWiseChartType"
+            (chartHover)="chartHovered($event)"></canvas>
+      </ba-card>
+  </div>
+
+<div>
+  <div class="col-md-6 col-xs-12" style="display: block">
+     <ba-card  title="Brands by Asset type" baCardClass="bxmedium-card">
+    
+    <canvas class="space-asset"  baseChart
+            [datasets]="logo_type_val"
+            [labels]="logo_type_Lab"
+             [colors]="topAssetWiseColor"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            ></canvas>
+             </ba-card>
+  </div>
+</div>
+</div>-->
+
+
+
+
+  <div class="row">
+
+
+      <div class="col-md-6 col-sm-12 ">
+  <ba-card  title="Asset Analysis" baCardClass="bxmedium-card">
+               <!--<div class="offset-md-11 col-md-15 col-sm-3 col-xs-6">
+                  <div class="button-wrapper">
+                    <button type="button" (click)="getBackHome()" class="resetbtn  btn-xs"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+                  </div>  
+              </div>-->
+    <canvas class="space-asset"  baseChart 
+            [datasets]="topAssetData"
+            [labels]="topAssetLabels"
+            [colors]="topAssetColor"
+            [options]="topAssetOptions"
+            [legend]="topAssetLegend"
+            [chartType]="topAssetChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="assetExposureClicked($event)"></canvas>
+      </ba-card>
+    </div>
+
+    <div class="col-md-6 col-sm-12 ">
+        
+    <ba-card  title="Brands Visibility" baCardClass="bxmedium-card">
+
+      <canvas class="space-overall" baseChart
+            [datasets]="assetFrameData"
+            [labels]="assetFrameLabels"
+            [colors]="topAssetColor"
+            [options]="assetFrameChartOptions"
+            [legend]="assetFrameLegend"
+            [chartType]="assetFrameChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="logoExposureClicked($event)"></canvas>
+      </ba-card>
+  </div>
+
+ 
+</div>
+
+<div class="row">
+      <div class="col-md-12">
+  <ba-card  title=" Time Analysis" baCardClass="bxmedium-card with-scroll"> 
+    
+      <div class=" col-md-8 offset-md-8 input-demo radio-demo row">
+        <div class="col-md-4 ">
+          <label class="radiotext">Section</label>
+            <select class="Intervalbutton" (change)="matchIntervals()"   [(ngModel)]="selected_section">      
+                <option *ngFor="let item of dropDownMatchSection" value="{{item.value}}" >
+                    {{item.name  }}  
+                </option> 
+            </select>
+        </div>
+
+
+  <div class="col-md-4">
+      <label class="radiotext">Interval</label>
+      <select class="Intervalbutton" (change)="OnChangeInterval()"   [(ngModel)]="selected_interval">
+                
+                <option *ngFor="let item of dropDownInterval " value="{{item.value}}" >
+                    {{item.name  }}
+                   
+                </option>
+      </select>
+    </div>
+  </div>
+
+ <div class="chartAreaWrapper">
+
+    <canvas baseChart width="5000" height="650"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="topAssetWiseColor"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+ </div>
+   
+ </ba-card>
+  </div>
+</div>
+
+<!--<div class="row">
+  <div class="col-md-12">
+    <ba-card  title=" Brand Elements" baCardClass="with-scroll"> 
+            <div id="col1" style="height: 420px; position: relative;" >  </div>
+           <p style="color: #E87868" class="radiotext"> Logo Elements:  Total number of 120 logo elements were detected from total 67 Sponsors Logo.</p>
+          </ba-card>
+  </div>      
+ </div>-->
+<div class="row">
+<div class="col-md-6 col-sm-12 ">
+  <ba-card  title="Area Analysis" baCardClass="bxmedium-card">
+    <canvas class="space-asset"  baseChart 
+            [datasets]="areaAssetData"
+            [labels]="areaAssetLabels"
+            [colors]="areaAssetColor"
+            [options]="areaAssetOptions"
+            [legend]="areaAssetLegend"
+            [chartType]="areaAssetChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="assetExposureClicked($event)"></canvas>
+      </ba-card>
+    </div>
+
+    <div class="col-md-6 col-sm-12 ">
+  <ba-card  title="Continuous Exposure" baCardClass="bxmedium-card">
+    <canvas class="space-asset"  baseChart 
+            [datasets]="contiData"
+            [labels]="contilabel"
+            [colors]="contiChartColor"
+            [legend]="areaAssetLegend"
+            [chartType]="contiChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="assetExposureClicked($event)"></canvas>
+      </ba-card>
+    </div>
+</div>
+
+
+</section>

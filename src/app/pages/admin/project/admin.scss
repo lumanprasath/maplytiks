@@ -1,0 +1,54 @@
+.form-control{
+	border:solid 2px #4d5f72;
+	border-style: solid;
+	
+}
+
+
+
+.form-control[disabled]{
+color: black;
+border:solid 2px #4d5f72;	
+}
+
+.Intervalbutton{
+   background-color: white;
+  color: black;
+  padding: 3px 18px;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  border: 1px solid #4d5f72;
+  cursor: pointer;
+  border-radius: 4px;
+
+
+}
+
+.row {
+	 padding: 5px;
+}
+
+.Intervalbutton:hover {
+ background-color:  white;
+  color: black;
+  padding: 3px 18px;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  border: 1px solid #4d5f72;
+  cursor:pointer;
+  border-radius: 4px;
+box-shadow:black;
+ 
+}
+
+.btn-auth {
+  background-color: #634f6a!important;
+  color: #ffffff!important;
+  width: 155px;
+  height: 38px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: "Noto sans"
+  
+}

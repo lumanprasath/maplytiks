@@ -1,0 +1,36 @@
+
+
+<div class="row" >
+<div class=" col-md-12 col-sm-12 col-xs-12 col-lg-12">
+     <ba-card title=" Select"  baCardClass="small-card">
+       <div class="row top-buffer">
+      
+        <div class="col-md-2 col-xs-6"> 
+            <div class="card-text"> <label for="name">   League </label> </div>
+            <select class="dropbtn" (change)="OnChangeChannel()"   [(ngModel)]="selected_league">
+                
+                <option *ngFor="let item of dropDownLeague " value="{{item.league}}" >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+
+       <div class="row top-buffer">      
+        <div class="col-md-2 col-xs-6"> 
+           <div class="card-text"> <label for="name">   Match </label> </div>
+          <select class="dropbtn"    [(ngModel)]="selected_match">
+                
+                <option *ngFor="let item of dropDownMatch" value="{{item.match}}" disabled >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+       
+     </div>
+     </div>
+ </ba-card>
+</div>
+</div>
+

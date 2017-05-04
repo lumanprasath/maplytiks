@@ -1,0 +1,41 @@
+<div class="horizontal-scroll">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th class="table-id">#</th>
+      <th>Request Date</th>
+      <th>Client</th>
+      <th>Sport</th>
+      <th>Tournament</th>
+      <th>Round</th>
+      <th>Match</th>
+      <th>Server</th>
+      <th>Host</th>
+      <th>Port</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Brand Detail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of peopleTableData">
+      <td class="table-id">{{ item.id }}</td>
+      <td> {{item.RequestDate}} </td>
+      <td>{{ item.clientname }}</td>
+      <td>{{ item.sport }}</td>
+      <td>{{ item.tournament }}</td>
+       <td>{{ item.round }}</td>
+      <td>{{ item.match }}</td>
+        <td>{{ item.server }}</td>
+      <td>{{ item.host }}</td>
+       <td>{{ item.port }}</td>
+      <td>{{ item.username }}</td>
+      <td>{{ item.password }}</td>
+      <!--<td><a class="email-link" href="mailto:{{ item.email }}">{{ item.email }}</a></td>-->
+      <td>
+        <button ngClass="{status-button btn btn-xs btn-{{ item.status }}">{{ item.status }}</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

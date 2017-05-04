@@ -1,0 +1,19 @@
+.submit-button {
+   color: #da4836;
+    
+}
+
+input.ng-valid[required], .ng-valid.required  {
+  border-top: 5px solid #42A948; /* green */
+}
+
+input.ng-dirty.ng-invalid:not(form)  {
+  border-top: 5px solid #a94442; /* red */
+}
+
+
+// input:required {
+//     border-color: #ccc !important;
+//     box-shadow: none !important;
+//     -webkit-box-shadow: none !important;
+// }

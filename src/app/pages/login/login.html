@@ -1,0 +1,121 @@
+<div class="auth-main">
+  <div class="row">
+    <div class="col-md-12 outer-wrapper">
+      <div class="top nosticky " >
+    <img  class="logo"  src="./assets/img/logo-dark.png" width="105" height="30" 
+      onError="this.src='./assets/img/coke.jpg';"  alt="..." />
+      </div>
+      </div>
+      </div>
+
+  <div class="auth-block">
+  
+   
+    <h1> Where work <br>happens.</h1>
+      <span class="asterisk alt">*</span>  <p style="color:black" >Whatever work means for you, Slack brings all the pieces and 
+   <br class="not-mobile"> people you need together so you can actually get things done.</p>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+    
+      <div class="form-group row" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+        <label for="inputEmail3" class="col-sm-2 control-label"></label>
+
+        <div class="col-sm-10">
+          <input [formControl]="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+        <label for="inputPassword3" class="col-sm-2 control-label"></label>
+
+        <div class="col-sm-10">
+          <input [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+          <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth">Get Started</button>
+        </div>
+     
+        <a routerLink="/register" class="auth-link login-textmargin">New to Drive Analytics? Sign up!</a>
+        <a routerLink="/login" class="auth-link forgot-password">Forgot password?</a>
+       
+              </div>
+    </form>
+
+
+  </div>
+
+    <img  class="fa-example-img" style="float: right" src="./assets/img/headline-wrapper.png" width="595.4" height="550"
+      onError="this.src='./assets/img/coke.jpg';"  alt="..." />
+<!--<div class="Where_work_happens">
+     height:550px;
+    width:595.4px
+      <nav class="top no_sticky">
+
+	<a href="https://www.drive-analytics.com" class="logo" data-qa="logo" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_logo" aria-label=""></a>
+		
+	</nav>
+         
+         <div class="outer-wrapper">
+             
+	 <div id="where_work_happens" class="section  animate_svg ">
+            <div id="where_work_happens_svg_wrapper"></div>
+		<div class="content">
+                    <div class="wrapper">
+			<h1 data-shadow-text="Where work" data-shadow-text-mobile="Where work happens" class="headline">
+                            Where <br class="mobile-only"> work<sup class="asterisk">*</sup><br>happens.
+			</h1>
+
+                    <div class="cta_wrapper">
+			<p class="subhead">
+                            <span id="where_work_happens_illo_mobile"></span>
+                            <span class="asterisk alt">*</span>Whatever work means for you, Slack brings all the pieces and <br class="not-mobile"> people you need together so you can actually get things done.</p>
+											
+                    <div class="cta">
+                        <form action="/get-started" method="post" class="cta_form align_middle" novalidate="">
+    
+                    <div class="cta row">
+                        <div class="form-group">
+                            <div class="col-sm-12"><input name="Username" type="text" spellcheck="false" id="inline_input" placeholder="Username" class="input_email input_inline " data-email-healing="true">
+                            </div>
+                            <div class="col-sm-12"><input name="Password" type="Password" spellcheck="false" id="inline_input" placeholder="Password" class="input_email input_inline " data-email-healing="true">
+                         </div>
+                        </div>
+                       
+                    <div class="center-block">
+                        <div class="col-sm-12 text-center">
+                         <button type="submit" class="btn center-block ga_track_signup" data-clog-click="true" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=cta_get_started">Get Started</button>
+                            
+                        </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <span class="cta_footer"><br><a href="/sign" class="opt_cta_signin" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=cta_footer_sign_in">Forgot Password ?</a> </span>
+                            </div>
+                            <div class="col-md-6">
+                            <span class="cta_footer"><br><a href="/sign" class="opt_cta_signin" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=cta_footer_sign_in">Sign Up</a></span>
+                            </div>
+                        </div>
+                    	 </form>								
+                    
+    </div>
+                    
+                    </div>
+		</div>
+	</div>
+        </div>
+         </div>
+        <script type="text/javascript" src="js/functions.js"></script>
+    </div>-->
+
+
+
+
+
+
+</div>
+
+
+
+

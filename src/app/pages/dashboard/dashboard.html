@@ -1,0 +1,132 @@
+
+
+  <div class="row">
+    <ba-card title="Project Details"  baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source" (rowSelect)="CustomEditorComponent($event)"	  (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
+
+
+<div class="row">
+  <ba-card title="Brand Details" baCardClass="with-scroll">
+      <ng2-smart-table [settings]="brandsettings" [source]="brandsource" ></ng2-smart-table>
+    </ba-card>
+</div>
+
+<div class="row">
+
+ <div class= "col-xlg-6 col-xl-6 col-lg-6 col-sm-6 col-xs-6 ">
+       <ba-card  title=" Create New Project" baCardClass="medium-card">
+   
+   
+                <button (click)="clicked()" class="btn btn-danger nextbutton	fa fa-plus-square " >  Create </button>
+              
+      </ba-card>
+</div>
+
+ <div class= "col-xlg-6 col-xl-6 col-lg-6 col-sm-6 col-xs-6 ">
+       <ba-card  title=" Previous Projects" baCardClass="medium-card">   
+
+    <div class="row">
+        <div class=" col-md-8 input-demo radio-demo row">
+                <div  class="col-md-4">
+                <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" (click)="overall()" id="inlineRadio1" value="option1" checked="checked">
+                    <span class="radiotext">Overall </span>
+                </label>
+                </div>
+
+                <div  class="col-md-4">
+                <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" (click)="brandwise()" id="inlineRadio1" value="option2" >
+                    <span class="radiotext">Brandwise</span>
+                </label>
+                </div>
+        </div>
+        </div>
+       
+
+       <div id="overall">
+         <div class="row top-buffer">
+        <div class="col-md-2 col-xs-6"> 
+            <div class="radiotext"> <label for="name">   League </label> </div>
+            <select class="dropbtn" (change)="OnChangeChannel()"   [(ngModel)]="selected_league">
+                
+                <option *ngFor="let item of dropDownLeague " value="{{item.league}}" >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+        </div>
+
+       <div class="row top-buffer">      
+        <div class="col-md-2 col-xs-6"> 
+           <div class="radiotext"> <label for="name">   Match </label> </div>
+          <select class="dropbtn"    [(ngModel)]="selected_match">
+                
+                <option *ngFor="let item of dropDownMatch" value="{{item.match}}" disabled >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+       
+     </div> 
+      <button   (click)="clickmaplytiks()" class="btn btn-primary  nextbutton 	fa fa-database  " >  View </button>
+      </div>
+
+      <div id="brandwise">
+               <div class="row top-buffer">
+        <div class="col-md-3 col-xs-6"> 
+            <div class="radiotext"> <label for="name">   League </label> </div>
+            <select class="dropbtn" (change)="OnChangeChannel()"   [(ngModel)]="selected_league">
+                
+                <option *ngFor="let item of dropDownLeague " value="{{item.league}}" >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+        </div>
+
+       <div class="row top-buffer">      
+        <div class="col-md-3 col-xs-6"> 
+           <div class="radiotext"> <label for="name">   Match </label> </div>
+          <select class="dropbtn"    [(ngModel)]="selected_match">
+                
+                <option *ngFor="let item of dropDownMatch" value="{{item.match}}" disabled >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>      
+     </div> 
+
+         <div class="row top-buffer">      
+        <div class="col-md-3 col-xs-6"> 
+           <div class="radiotext"> <label for="name">   Select Brand </label> </div>
+          <select class="dropbtn"    [(ngModel)]="selected_brand">              
+                <option *ngFor="let item of allLogoLabels" value="{{item}}"  >
+                    {{item | uppercase }}              
+                </option>
+            </select>
+        </div>  
+       
+     </div> 
+      <button   (click)="clickbrandwisemaplytiks()" class="btn btn-primary  nextbutton 	fa fa-database  " >  View </button>
+      </div>
+
+      </ba-card>
+</div>
+</div>
+
+
+
+
+
+
+ 
+
+
+

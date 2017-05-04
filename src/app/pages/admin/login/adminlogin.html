@@ -1,0 +1,105 @@
+  <div class="row">
+    <ba-card title="All User Details"  baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source" (rowSelect)="CustomEditorComponent($event)" ></ng2-smart-table>
+    </ba-card>
+  </div>
+
+  <ba-card title=" User"  baCardClass="with-scroll">
+   <form [formGroup]="adminform" class="form-horizontal">
+      <input [formControl]="id" type="hidden" id="id" class="form-control"  >
+     <div class=" row">
+      <div class="col-lg-6" >
+      <label for="inputfirstName3" class="col-sm-2 control-label"> First Name </label>
+
+      <div class="col-sm-5 ">
+          <input [formControl]="firstname" type="text" id="fn" class="form-control"  >
+        </div>
+      </div>
+
+
+    <div class="col-lg-6" >
+        <label for="inputlastName3" class="col-sm-2 control-label">Last Name </label>
+
+        <div class="col-sm-5">
+          <input [formControl]="lastname" type="text" id="ln" class="form-control"  >
+        </div>
+      </div>
+     </div>
+
+ <div class=" row">
+      <div class="col-lg-6" >
+        <label for="inputcompany3" class="col-sm-2 control-label">Company </label>
+
+        <div class="col-sm-5">
+          <input [formControl]="company" type="text" id="com" class="form-control"  >
+        </div>
+      </div>
+
+      <div class="col-lg-6 " >
+        <label for="inputEmail3" class="col-sm-2 control-label"> Email</label>
+
+        <div class="col-sm-5">
+          <input [formControl]="email" type="email" id="email" class="form-control" >
+        </div>
+      </div>
+ </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+        <label for="inputphone3" class="col-sm-2 control-label">Phone </label>
+
+        <div class="col-sm-5">
+          <input [formControl]="phone" type="text" id="ph" class="form-control" >
+        </div>
+     
+        </div>
+         <div class="col-lg-6">
+            <label for="username" class="col-sm-2 control-label">User Name  </label>
+
+            <div class="col-sm-5">
+              <input [formControl]="vcUsername" type="text"  class="form-control"  >
+            </div>
+         </div>
+
+      </div>
+    <div class="row">
+            <div class="col-lg-6">
+              <label class="col-sm-3 control-label" for="Sports">Role</label>   
+              <select  class="col-sm-3 Intervalbutton"  name="role" [ngModelOptions]="{standalone: true} "  [(ngModel)]="selectedRole">
+                            
+                            <option *ngFor="let item of dropDownRole" value="{{item.role}}">
+                                {{item.role | uppercase }}
+                            </option>
+              </select>
+          </div>
+        <div class="col-lg-6">
+            <label class="col-sm-3 control-label"  for="Sports">Status </label>   
+                  <select class="col-sm-3 Intervalbutton "   name="status" [ngModelOptions]="{standalone: true}"  [(ngModel)]="selectedStatus">
+                                
+                                <option *ngFor="let item of dropDownStatus" value="{{item.status}}">
+                                    {{item.status | uppercase }}
+                                </option>
+                  </select>
+        </div>
+    </div>
+
+     <div class="row">
+
+     </div>
+
+      <div class=" row">
+        <div class=" col-md-2">
+         
+            <button  (click)="Update(adminform.value)" class="btn btn-default btn-auth "> Save </button>
+            
+        </div>
+        <div class="col-md-2">
+           <button  (click)="reset($event)" class="btn btn-default btn-auth "> Reset  </button>
+        </div>
+        <div class="col-md-2">
+           <button  (click)="Delete(adminform.value)" class="btn btn-default btn-auth "> Delete </button>
+        </div>
+      </div>
+   </form>
+
+  </ba-card>

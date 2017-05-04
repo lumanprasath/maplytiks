@@ -1,0 +1,219 @@
+
+
+<section class="chartist">
+
+
+  <!--<div class="row">
+     <button (click)="onClickMe()">Click me!</button>
+  </div>-->
+  <ba-card title="Select options" baCardClass="with-scroll">
+   <div class="row">
+   
+      <div class="col-md-15 col-sm-3  ">
+            <select class="dropbtn"  (change)="OnChangeChannel()"  [(ngModel)]="selectedChannel">
+                
+                <option *ngFor="let item of dropDownChannel " value="{{item.channel}}" >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+     </div>
+
+    <div class="col-md-15 col-sm-3" >
+            <select class="dropbtn"  (change)="OnChangeBrand()"   [(ngModel)]="selectedBrand">
+                
+                <option *ngFor="let item of dropDownBrand" value="{{item.brand}}">
+                  {{item.name | uppercase }}
+                </option>
+            </select>
+     </div>
+    
+      <!--<div class="col-md-15 col-sm-3">
+            <select class="dropbtn"  (change)="OnChangeDate()" [(ngModel)]="selectedDate">
+               
+                <option *ngFor="let item of dropDownDate" value="{{item.date}}">
+                  {{item.name}}
+                </option>
+            </select>
+      </div>-->
+
+        <div class="col-md-15 col-sm-3"  >
+         <form>
+           <div class="form-group " *ngFor="let dateInput of dateInputs" >
+             <div  daterangepicker [options]="{startDate:dateInput.start, endDate:dateInput.end }" (change)="OnChangeDate()" (selected)="selectDate($event, dateInput)" >
+                   <span class="dropbtn"  name="daterange" >
+                       {{ dateInput.start | date:'yyyy/MM/dd' }} - {{ dateInput.end| date:'yyyy/MM/dd' }}
+                   </span>
+               </div>
+           </div>
+       </form>
+       </div>
+
+     </div>
+     </ba-card>
+
+
+
+     
+  
+    
+
+
+    <div class="row">
+       
+          
+
+<div class="col-md-6"> 
+  <ba-card  title="Total Engagement" baCardClass="with-scroll">
+        <canvas baseChart width="400" height="225"
+          [data]="polarAreaChartData"
+          [labels]="polarAreaChartLabels"
+          [options]="polarOptions"
+          [legend]="polarAreaLegend"
+          [chartType]="polarAreaChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+  </ba-card>
+
+</div>
+
+<div class="col-md-6">
+   
+      <ba-card  title=" Top tag" baCardClass="with-scroll"> 
+<div id="col1" style="height: 420px; position: relative;" >  </div>
+</ba-card>
+  
+
+</div>
+  
+ </div>
+
+
+  
+
+
+<div class="row">
+
+    <div class="col-md-12">
+       
+      <ba-card title="Impact Score" baCardClass="with-scroll">
+       
+
+        <div class="row">
+           
+           <div class="col-md-12 col-lg-4"><h5> Sentiments Analysis </h5>
+           
+             <canvas baseChart
+          [data]="sentimentData"
+          [labels]="sentimentLabels"
+          [options]="sentimentOptions"
+          [chartType]="sentimentChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+            
+          </div>
+         
+          <div class="col-md-12 col-lg-4"><h5>User's Classification</h5>
+            <canvas baseChart
+          [data]="userClassData"
+          [labels]="userClassLabels"
+          [legend]="userClassLegend"
+          [chartType]="userClassChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+          </div>
+
+           <div class="col-md-12 col-lg-4"><h5>Top Users </h5>
+            <canvas baseChart
+          [data]="topUserData"
+          [labels]="topUserLabels"
+          [legend]="topUserLegend"
+          [options]="topUserOptions"
+          [chartType]="topUserChartType"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+          </div>
+         
+        </div>
+      </ba-card>
+    </div>
+</div>
+
+<div class="row">
+   
+
+    <div class="col-md-6 ">
+      <ba-card  title="Total Mentions" baCardClass="with-scroll">
+      <canvas baseChart
+            [datasets]="topMentionData"
+            [labels]="topMentionLabels"
+            [colors]="topMentionColor"
+            [options]="barChartOptions"
+            [legend]="topMentionLegend"
+            [chartType]="topMentionChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+      </ba-card>
+    </div>
+
+     <div class="col-md-6 ">
+     
+      <ba-card title="Total Domain" baCardClass="with-scroll">
+       <canvas baseChart
+            [datasets]="topDomainData"
+            [labels]="topDomainLabels"
+            [colors]="topDomainColor"
+            [options]="barChartOptions"
+            [legend]="topDomainLegend"
+            [chartType]="topDomainChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+
+      </ba-card>
+    </div>
+  </div>
+
+
+
+<ba-card title="Map with bubbles">
+  <div #baAmChart class="ba-am-chart bubble-maps"></div>
+</ba-card>
+
+
+<div class="row">
+   <div class="col-md-12 ">
+   
+     <ba-card title="Articles distribution by Language" baCardClass="with-scroll">
+      <canvas baseChart  width="400" height="100"
+           [datasets]="languageData"
+           [labels]="languageLabels"
+           [colors]="languageColor"
+           [options]="articleChartOptions"
+           [legend]="topReachLegend"
+           [chartType]="languageChartType"
+           (chartHover)="chartHovered($event)"
+           (chartClick)="chartClicked($event)"></canvas>
+     </ba-card>
+     </div>
+
+</div>
+ 
+
+<div class="row">
+  <ba-card title="Top Tweets" baCardClass="with-scroll">
+    <div class="col-md-12" >
+       <div class="col-xs-6 col-sm-3"  *ngFor="let item of twitterFeeds"  >
+       <blockquote class="twitter-tweet"><a href=  {{item.url}} > May 5, 2014</a></blockquote>
+       <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+       </div>
+ </div>
+ </ba-card>
+</div>
+
+
+
+  
+ 
+
+
+</section>

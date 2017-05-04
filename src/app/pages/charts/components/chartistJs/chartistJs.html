@@ -1,0 +1,323 @@
+
+
+<section class="chartist">
+<!--<div class="row col-md-12  col-lg-12 ">
+   <span   (click)="goHome()" class="round-button" > <i class="fa fa-home fa-2x"></i>   </span>
+</div>-->
+
+<!--<div class="row" >
+<div class=" col-md-12 col-sm-12 col-xs-12 col-lg-12">
+     <ba-card title=" Select"  baCardClass="small-card">
+       <div class="row top-buffer">
+      
+        <div class="col-md-2 col-xs-6"> 
+            <div class="card-text"> <label for="name">   League </label> </div>
+            <select class="dropbtn" (change)="OnChangeChannel()"   [(ngModel)]="selected_league">
+                
+                <option *ngFor="let item of dropDownLeague " value="{{item.league}}" >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+
+       <div class="row top-buffer">      
+        <div class="col-md-2 col-xs-6"> 
+           <div class="card-text"> <label for="name">   Match </label> </div>
+          <select class="dropbtn"    [(ngModel)]="selected_match">
+                
+                <option *ngFor="let item of dropDownMatch" value="{{item.match}}" disabled >
+                    {{item.name | uppercase }}
+                   
+                </option>
+            </select>
+        </div>  
+       
+     </div>
+     </div>
+ </ba-card>
+</div>
+</div>-->
+
+
+ <div class="row">
+  <div class="col-md-12 col-lg-12 ">
+ <div class="row">
+      <div class="col-md-3 col-lg-3 col-xs-12">  
+          <ba-card  baCardClass="xsmall-card0">
+              <div class="parent" style="text-align: left;">
+             <span class="fa-example-icon" style="margin-right: 20px;">  <i class="fa fa-clone" aria-hidden="true"></i></span>
+             <div class="lubna">
+             <span class="text" style="margin-left: 20px;" id="dynamic-number"> </span><br>
+                  <span class="mytext" style="margin-left: 20px;"> Total Game Frames</span>
+                  </div>
+             <!--{{totalbrandexposureCount}}-->
+          <!--<span class="my-text-para">Total Game Frames </span>-->
+            </div> 
+            
+          </ba-card>
+          </div>
+
+
+
+        <div class="col-md-3 col-lg-3 col-xs-12">  
+          <ba-card  baCardClass="xsmall-card3">
+                   <div class="parent" style="text-align: left;">
+                  <span class="fa-example-icon" style="margin-right: 20px;">  <i class="fa fa-sliders" aria-hidden="true"></i></span>
+                   <div class="lubna" >
+                  <span class="text" style="margin-left: 20px;" id="brand-number"></span> <br>
+                     <span class="mytext" style="margin-left: 20px;">Total Brands Tracked </span>
+                     </div>
+                </div>
+          </ba-card>
+          </div>
+         
+
+
+           <div class="col-md-3 col-lg-3"> 
+               <ba-card   baCardClass="xsmall-card2">
+                   <div class="parent" style="text-align: left;">
+                  <span class="fa-example-icon" style="margin-right: 20px;">  <i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                  <div class="lubna" >
+                  <span class="text" style="margin-left: 20px;">{{totalExposureTime }}</span><br>
+                    <span class="mytext" style="margin-left: 20px;">Total Game Duration </span>
+                    </div>
+                </div> 
+                  <!--<div class="my-fancy-container">
+                      <span class='my-icon'>  <i  class="fa fa-clock-o " aria-hidden="true"></i></span>
+                      <span class="my-text">{{totalExposureTime }} </span>
+                  </div>-->
+              </ba-card>
+          </div>
+
+          <div class="col-md-3 col-lg-3"> 
+            <ba-card  baCardClass="xsmall-card1">
+                  <div class="parent" style="text-align: left;">
+                  <td class="fa-example-icon"> <i class="fa fa-bar-chart" aria-hidden="true"></i></td>
+                         <div class="lubna" >
+                  <span class="text" style="margin-left: 20px;">{{brands_exposure}} </span>  <br> 
+                  <span class="mytext" style="margin-left: 20px;">Total Brand Duration ({{percentageBrandExposure}}%) </span>    
+                  </div>  
+                     <!--<span class="mytext">  </span>   -->
+                </div> 
+                <!--<div class="my-fancy-container">
+                      <span class='my-icon'> <i class="fa fa-tasks" aria-hidden="true"></i></span>
+                      <span class="my-text">({{brands_exposure}})</span>
+                  </div> <br>-->
+                   
+          </ba-card>
+          </div>
+<!--{{percentageBrandExposure}}%   -->
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6 col-xs-12">
+    <ba-card  title="Asset type" baCardClass="bxmedium-card">
+    <canvas class="space-asset"  baseChart 
+            [datasets]="topAssetWiseData"
+            [labels]="topAssetWiseLabels"
+            [colors]="topAssetWiseColor"
+            [options]="topAssetWiseOptions"
+            [legend]="topAssetWiseLegend"
+            [chartType]="topAssetWiseChartType"
+            (chartHover)="chartHovered($event)"></canvas>
+      </ba-card>
+  </div>
+
+<div>
+  <div class="col-md-6 col-xs-12" style="display: block">
+     <ba-card  title="Brands by Asset type" baCardClass="bxmedium-card">
+         <!--<h4 style="color: #E87868 "  ><b><small>Total </small>{{totalBrandsNumber}} <small>Brands Tracked</small></b></h4>-->
+    <canvas class="space-asset"  baseChart
+            [datasets]="logo_type_val"
+            [labels]="logo_type_Lab"
+             [colors]="topAssetWiseColor"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            ></canvas>
+             </ba-card>
+  </div>
+</div>
+</div>
+
+
+
+  <!--<div class="row">
+               <div class="col-md-15 col-sm-3">
+              <div class="button-wrapper">
+                <button type="button" (click)="getBackHome()" class="dropbtn  btn-xs">Reset</button>
+              </div>  
+    </div>
+  </div>-->
+
+
+ <!--<div class="row">
+  <div class="col-md-6 ">
+    <google-chart [data]="gaugeChartOptions"></google-chart>
+   
+
+  </div>
+  <div class="col-md-6 "></div>
+ </div>-->
+
+  <div class="row">
+      <div class="col-md-6 col-sm-12 ">
+  <ba-card  title="Asset Analysis" baCardClass="bxmedium-card">
+               <div class="offset-md-11 col-md-15 col-sm-3 col-xs-6">
+                  <div class="button-wrapper">
+                    <button type="button" (click)="getBackHome()" class="resetbtn  btn-xs"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button>
+                  </div>  
+              </div>
+    <canvas class="space-asset"  baseChart 
+            [datasets]="topAssetData"
+            [labels]="topAssetLabels"
+            [colors]="topAssetColor"
+            [options]="topAssetOptions"
+            [legend]="topAssetLegend"
+            [chartType]="topAssetChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="assetExposureClicked($event)"></canvas>
+      </ba-card>
+    </div>
+
+    <div class="col-md-6 col-sm-12 ">
+        
+    <ba-card  title="Brands Visibility" baCardClass="bxmedium-card">
+
+        <div class=" col-md-12 offset-md-10 col-xs-12 input-demo radio-demo row">
+          <div class="col-md-3 ">
+            <select class="Intervalbutton" (change)="topLogos()"   [(ngModel)]="selected_category">      
+                <option *ngFor="let item of dropDownlogocategory" value="{{item.value}}" >
+                    {{item.name  }}  
+                </option>
+            </select>
+            </div>
+
+
+   
+ 
+    </div>
+
+      <canvas class="space-overall" baseChart
+            [datasets]="topLogoData"
+            [labels]="topLogoLabels"
+            [colors]="topAssetColor"
+            [options]="topLogoOptions"
+            [legend]="topLogoLegend"
+            [chartType]="topLogoType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="logoExposureClicked($event)"></canvas>
+      </ba-card>
+  </div>
+
+ 
+</div>
+
+<div class="row">
+      <div class="col-md-12">
+  <ba-card  title=" Time Analysis" baCardClass="bxmedium-card with-scroll"> 
+    
+      <div class=" col-md-8 offset-md-8 input-demo radio-demo row">
+        <div class="col-md-4 ">
+          <label class="radiotext">Section</label>
+            <select class="Intervalbutton" (change)="matchIntervals()"   [(ngModel)]="selected_section">      
+                <option *ngFor="let item of dropDownMatchSection" value="{{item.value}}" >
+                    {{item.name  }}  
+                </option> 
+            </select>
+        </div>
+
+
+  <div class="col-md-4">
+      <label class="radiotext">Interval</label>
+      <select class="Intervalbutton" (change)="OnChangeInterval()"   [(ngModel)]="selected_interval">
+                
+                <option *ngFor="let item of dropDownInterval " value="{{item.value}}" >
+                    {{item.name  }}
+                   
+                </option>
+      </select>
+    </div>
+  </div>
+
+ <div class="chartAreaWrapper">
+
+    <canvas baseChart width="5000" height="650"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="topAssetWiseColor"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+ </div>
+   
+ </ba-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <ba-card  title=" Brand Elements" baCardClass="with-scroll"> 
+            <div id="col1" style="height: 420px; position: relative;" >  </div>
+           <p style="color: #E87868" class="radiotext"> Logo Elements:  Total number of 120 logo elements were detected from total 67 Sponsors Logo.</p>
+          </ba-card>
+  </div>      
+ </div>
+
+
+<!--<div class="row">
+    <div class="col-md-12">
+  <ba-card title="Average Area of Brands">
+     <div class=" col-md-6 input-demo radio-demo row">
+
+    <div class="col-md-3">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="inlineRadioOptions" (click)="fullInterval()" id="inlineRadio1" value="option1" checked="checked">
+        <span>full </span>
+      </label>
+    </div>
+    <div class="col-md-3">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="inlineRadioOptions" (click)="firstHalfInterval()" id="inlineRadio1" value="option2" >
+        <span>first Half</span>
+      </label>
+    </div>
+    <div class="col-md-3">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="inlineRadioOptions" (click)="secondHalfInterval()" id="inlineRadio2" value="option3">
+        <span>Second Half</span>
+      </label>
+    </div>
+
+  <div class="col-md-3">
+      <select class="Intervalbutton" (change)="OnChangeInterval()"   [(ngModel)]="selected_interval">
+                
+                <option *ngFor="let item of dropDownInterval " value="{{item.value}}" >
+                    {{item.name | uppercase }}
+                   
+                </option>
+      </select>
+    </div>
+  </div>
+        <canvas class="space-overall" baseChart
+            [datasets]="topAreaData"
+            [labels]="topAreaLabels"
+            [colors]="topAreaColor"
+            [options]="topAreaOptions"
+            [legend]="topAreaLegend"
+            [chartType]="topAreaType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="logoExposureClicked($event)"></canvas>
+      </ba-card>
+      </div>
+</div>-->
+
+
+</section>

@@ -1,0 +1,22 @@
+<div class="vertical-scroll">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="table-id">#</th>
+      <th>Brand</th>
+      <th>Asset</th>
+      <th>Tag Line</th>
+      <th>Logo Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of smartTableData">
+      <td class="table-id">{{ item.id }}</td>
+      <td>{{ item.brand }}</td>
+      <td>{{ item.asset }}</td>
+      <td>{{ item.tagline }}</td>
+      <td>{{ item.age }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

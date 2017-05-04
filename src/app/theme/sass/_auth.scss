@@ -1,0 +1,294 @@
+@import 'conf/conf';
+
+$text-color: #ffffff;
+
+
+.auth-main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color:#e7f4f4;
+}
+
+.auth-block {
+  width: 540px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color:#e7f4f4;
+  
+
+ // @include bg-translucent-dark(0.45);
+  color: #fff;
+  padding-right: 75px;
+  h1 {
+    font-weight: $font-light;
+    margin-top: 35px;
+    margin-left: 35px;
+    font-family: "Noto sans";
+    margin-bottom: 25px;
+    text-align: center;
+    color: #4d394b;
+  }
+  p {
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+    outline: none;
+     font-family: "Noto sans";
+    // text-align: center;
+    //margin-left: 15px;
+     margin-bottom: 50px;
+    transition: all 0.2s ease;
+    color: #f17243;
+    &:hover {
+      color: #f17243;
+    }
+  }
+
+  .control-label {
+    padding-top: 11px;
+    color: $text-color;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+}
+
+.auth-input {
+  width: 300px;
+  margin-bottom: 24px;
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 4px 10px;
+    outline: none;
+  }
+}
+
+a.forgot-pass {
+  display: block;
+  text-align: right;
+ // margin-bottom: 20px;
+  float: right;
+  z-index: 2;
+  position: relative;
+
+}
+
+.signup-textmargin{
+  margin-left:82px
+}
+
+.login-textmargin{
+  margin-left:98px
+}
+
+.auth-link {
+  display: inline-block;
+  font-size: 16px;
+ // text-align: center;
+ // margin-left:82px; 
+  margin-bottom: 33px;
+}
+
+
+
+
+  .forgot-password{
+  float: right;
+  margin-right:10px;
+  }
+
+
+
+
+
+
+.auth-sep {
+  margin-top: 36px;
+  margin-bottom: 24px;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  position: relative;
+  & > span {
+    display: table-cell;
+    width: 30%;
+    white-space: nowrap;
+    padding: 0 24px;
+    color: $text-color;
+    & > span {
+      margin-top: -12px;
+      display: block;
+    }
+  }
+  &:before, &:after {
+    border-top: solid 1px $text-color;
+    content: "";
+    height: 1px;
+    width: 35%;
+    display: table-cell;
+  }
+}
+
+.al-share-auth {
+  text-align: center;
+  .al-share {
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    li {
+      margin-left: 24px;
+      &:first-child {
+        margin-left: 0;
+      }
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.btn-auth {
+  background-color: #634f6a!important;
+  color: #ffffff!important;
+  width: 385px;
+  height: 38px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: $font-bold;
+  font-size: 20px;
+  font-family: "Noto sans"
+  
+}
+
+
+
+.logo{
+ 
+    float: left;
+    margin: 34px 0px 0px 3rem;
+}
+
+nav.top {
+
+    position:absolute;
+    left:0;
+    vertical-align:top;
+    top:0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 99;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transition: -webkit-transform 420ms cubic-bezier(.165,.84,.44,1);
+    -moz-transition: -moz-transform 420ms cubic-bezier(.165,.84,.44,1);
+    transition: transform 420ms cubic-bezier(.165,.84,.44,1);
+}
+
+
+nav.top.nosticky{
+    position:absolute;
+    
+}
+
+
+
+.asterisk{
+    position:relative;
+    top:-.15em;
+    vertical-align:top;
+    right:-.05em;
+    background-image:url(/c035b/img/landing/where_work_happens/asterisk.png);
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    color:transparent
+}
+
+
+.asterisk.alt{font-family:Slack-Lato,appleLogo,sans-serif;font-weight:900;text-shadow:none;
+color:#e32072;font-size:2em;line-height:0;vertical-align:bottom;top:-.2em;right:0;background-image:none;position:relative;margin-right:.1em}
+
+
+.outer-wrapper {
+    height: 100vh;
+    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+// #where_work_happens {
+//     flex: 1 0 100%;
+//     max-height: 750px;
+//     background-color: #E3E4E5;
+//     display: flex;
+//     color: #253039;
+//     position: relative;
+//     padding: 4.25rem;
+// }
+
+
+// #where_work_happens .cta_footer {
+//     font-size: 14px;
+//     display: block;
+//     margin-top: 10px;
+//     color: #70787D;
+// }
+
+// #where_work_happens_svg_wrapper{
+//     position:absolute;
+//     z-index:1;
+//     bottom:0;
+//     right:0;
+//     margin-right:20px;
+//     margin-bottom:20px;
+//     background-size:contain;
+//     background-repeat:no-repeat;
+//     background-position:bottom right;
+//     background-image:url(images/headline-wrapper.png);
+//     transition:height .2s,width .2s;
+//     will-change:height,width;
+//     transform:translate3d(0,0,0);
+//     height:550px;
+//     width:595.4px
+// }
+
+// #where_work_happens .asterisk{
+//     position:relative;
+//     top:-.15em;
+//     vertical-align:top;
+//     right:-.05em;
+//     background-image:url(/c035b/img/landing/where_work_happens/asterisk.png);
+//     background-size:contain;
+//     background-position:center center;
+//     background-repeat:no-repeat;
+//     color:transparent
+// }
+
+
+
+// .outer-wrapper {
+//     height: 100vh;
+//     min-height: 1000px;
+//     display: flex;
+//     flex-direction: column;
+// }
+
+
+
+// .outer-wrapper{height:100vh;min-height:1000px;display:flex;flex-direction:column}
+
+
+
+

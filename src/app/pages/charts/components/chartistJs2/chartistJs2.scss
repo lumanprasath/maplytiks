@@ -1,0 +1,192 @@
+@import "../../../../theme/sass/conf/conf";
+
+.ct-area {
+  fill-opacity: .5;
+}
+
+
+.ct-label{
+  color: $default-text;
+  opacity: 0.9;
+  fill: $default-text;
+}
+
+.ct-chart .ct-label{
+  font-size: 1em;
+  
+}
+
+.ct-chart svg{
+  width: 100%;
+  display: block;
+}
+#col1 {
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width:80%;
+    cursor: pointer;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+}
+
+
+.ct-series-a {
+   .ct-line, .ct-point, .ct-slice-donut {
+      stroke: $primary;
+   }
+   
+   
+   
+   .ct-slice-pie {
+    stroke: $primary;
+   
+  }
+
+  .ct-bar {
+      stroke: #ffcd03;
+      stroke-width: 14px;
+   
+  }
+
+
+  .ct-slice-pie, .ct-area{
+    fill: $primary;
+  }
+}
+
+.ct-series-b {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $success;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $success;
+  }
+}
+
+.ct-series-c {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $danger;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $danger;
+  }
+}
+
+.ct-series-d {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $warning;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $warning;
+  }
+
+}
+
+.ct-series-e {
+  .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+    stroke: $info;
+  }
+  .ct-slice-pie, .ct-area{
+    fill: $info;
+  }
+}
+
+.stacked-bar .ct-bar{
+  stroke-width: 30px;
+  position: relative;
+  left: -102px;
+}
+
+.bubble-maps {
+  width: 100%;
+  height: calc(100vh - 283px);
+  font-size	: 11px;
+}
+
+.popup {
+  position: relative;
+  display: block;
+  span {
+    cursor: pointer;
+  }
+  .popup-in {
+    position: absolute;
+    border: 1px solid #eee;
+    max-width: 400px;
+    left: 25px;
+    top: 100%;
+  }
+  &.showing {
+    span {
+      color: red;
+    }
+  }
+}
+
+
+.dropbtn {
+  background-color: #00acac
+;
+  color: white;
+  padding: 9px 24px;
+  font-family: Cursive;
+  font-size: 16px;
+  border: 2px solid #00acac
+;
+  cursor: pointer;
+  display: block;
+  border-radius: 6px;
+}
+.dropbtn:hover {
+ background-color:  white;
+  color: black;
+  padding: 9px 24px;
+  font-family: Cursive;
+  font-size: 16px;
+  border: 2px solid #00acac
+;
+  cursor:pointer;
+  display: block;
+  border-radius: 6px;
+  box-shadow:black;
+ 
+}
+
+
+.ct-tooltip {
+    position: absolute;
+    display: inline-block;
+    min-width: 5em;
+    padding: 8px 10px;
+    background: #383838;
+    color: #fff;
+    text-align: center;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity .2s linear;
+ 
+    // Arrow 
+    &:before {
+        position: absolute;
+        bottom: -14px;
+        left: 50%;
+        border: solid transparent;
+        content: ' hey';
+        height: 0;
+        width: 0;
+        pointer-events: none;
+        border-color: rgba(251, 249, 228, 0);
+        border-top-color: #383838;
+        border-width: 7px;
+        margin-left: -8px;
+    }
+ 
+    &.hide {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+    }
+}

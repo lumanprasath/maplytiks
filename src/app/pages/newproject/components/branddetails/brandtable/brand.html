@@ -1,0 +1,39 @@
+
+<form *ngFor="let a of myForm.controls.addresses.controls; let index = index" class="row form-inline">
+  <div class="panel-heading ">
+              <span>Logo {{index + 1}}</span>
+              <span class="fa fa-close pull-right" *ngIf="myForm.controls.addresses.controls.length > 1" (click)="removeAddress(index)"></span>
+  </div>
+ 
+  <div class="form-group col-sm-3">
+    
+    <input type="text" class="form-control" id="brand" placeholder="Brand">
+  </div>
+   <div  class="form-group col-sm-3">
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Asset">
+  </div>
+     <div  class="form-group col-sm-3">
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Tag Line">
+  </div>
+  <div  class="form-group col-sm-3">
+    <input type="file" class="form-control" id="exampleInputEmail2" placeholder="pic">
+  </div>
+</form>
+
+<div class="form-group text">
+          <a (click)="addAddress()" style="cursor: default">Add another +</a>
+</div>
+
+<div class="form-group">
+          <button (click)="clickback()" class="btn btn-primary pull-left " ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous Section </button>
+          <button (click)="clicked()" class="btn btn-primary pull-right " > Next Section <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </button>
+</div>
+
+<div class="clearfix"></div>
+
+
+  <!--<div class="margin-20">
+          <div>myForm details:-</div>
+          <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+          <pre>form value: <br>{{myForm.value | json}}</pre>
+        </div>-->

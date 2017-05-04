@@ -1,0 +1,73 @@
+
+
+<div class="container">
+  <div [hidden]="submitted">
+
+    
+<div class="row col-md-12">                                                                                     
+  <div class="form-group input-demo radio-demo row">
+    <div class="col-md-4 offset-md-2">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked="checked">
+        <span>FTP</span>
+      </label>
+    </div>
+    <div class="col-md-4 ">
+      <label class="radio-inline custom-radio nowrap">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <span>SFTP</span>
+      </label>
+    </div>
+  </div>
+
+
+
+ <div class="form-group col-md-6 offset-md-2">
+      <label for="inputHost">Host</label>
+      <input type="text" class="form-control" id="inputHost"  required   [(ngModel)]="inputHost" name="inputHost" #host="ngModel"  >
+       <div [hidden]="host.valid || host.untouched" class="alert alert-danger"> Required </div>
+</div>
+
+<div class="form-group col-md-2 ">
+      <label for="inputPort">Port</label>
+      <input type="text" class="form-control" id="inputPort" required  [(ngModel)]="inputPort" name="inputPort" #port="ngModel">
+       <div [hidden]="port.valid || port.untouched" class="alert alert-danger"> Required </div>
+</div>
+
+
+<div class="form-group col-md-8 offset-md-2">
+      <label for="inputLogon">Logon Type</label>
+      <input type="text" class="form-control" id="inputLogon" required [(ngModel)]="inputLogon" name="inputLogon" #logon="ngModel">
+       <div [hidden]="logon.valid || logon.untouched" class="alert alert-danger"> Required </div>
+</div>
+
+  <div class="form-group col-md-8 offset-md-2">
+    <label for="InputEmail">User ID</label>
+    <input type="email" class="form-control" id="InputEmail" required [(ngModel)]="InputEmail" name="InputEmail" #user="ngModel">
+         <div [hidden]="user.valid || user.untouched" class="alert alert-danger"> Required </div>
+  </div>
+
+  <div class="form-group col-md-8 offset-md-2">
+    <label for="InputPassword">Password</label>
+    <input type="password" class="form-control" id="InputPassword" required [(ngModel)]="InputPassword" name="InputPassword" #password="ngModel">
+         <div [hidden]="password.valid || password.untouched" class="alert alert-danger"> Required </div>
+  </div>
+
+  <div class="form-group col-md-8 offset-md-2">
+    <label for="Message">Message</label>
+    <textarea  placeholder="Default Input" class="form-control" id="Message"></textarea>
+  </div>
+  
+  <div class="form-group col-md-8 offset-md-2">
+  <button (click)="clickback()" class="btn btn-primary pull-left  " > <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous Section </button>
+  <button type="submit2" class="btn btn-danger pull-right ">Submit</button>
+  </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+ 
